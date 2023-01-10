@@ -10,6 +10,8 @@ export default function Home() {
     <div>
       <Navbar />
       
+      
+
       <Checkout />
     </div>
   );
