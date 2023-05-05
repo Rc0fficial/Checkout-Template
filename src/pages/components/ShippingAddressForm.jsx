@@ -1,0 +1,124 @@
+import { useState } from "react";
+import { Mail } from "./icons/mail.svg";
+import { User } from "./icons/User.svg";
+import { Location } from "./icons/Location.svg";
+import { HomeLocation } from "./icons/HomeLocation.svg";
+
+export const ShippingAddressForm = () => {
+  const countries = ["USA", "Canada", "Mexico", "Brazil"]; // sample list of countries
+  const [country, setCountry] = useState("");
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
+  const [address, setAddress] = useState("");
+  const [city, setCity] = useState("");
+  const [postalCode, setPostalCode] = useState("");
+  return (
+    <div>
+      <div className="mt-[50px] text-[24px] font-semibold">
+        <h2 className="mb-[20px]">Shipping Address</h2>
+        <div className="relative mb-4">
+          <select
+            id="country"
+            name="country"
+            value={country}
+            onChange={(e) => setCountry(e.target.value)}
+            className="w-full px-3 py-2  border-[#D6D8EE] border-[1px] border-solid rounded-full h-[56px] shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 text-sm pl-20"
+          >
+            <option value="" disabled selected>
+              Country
+            </option>
+            {countries.map((c) => (
+              <option key={c} value={c}>
+                {c}
+              </option>
+            ))}
+          </select>
+          <div className="absolute top-0 left-0 h-full flex items-center pl-[39px]">
+            <Location />
+          </div>
+        </div>
+
+        <div className="grid grid-cols-2 gap-4 mb-4 mt-[29px]">
+          <div>
+            <label className="relative flex items-center justify-center">
+              <input
+                type="text"
+                id="first-name"
+                name="first-name"
+                value={firstName}
+                onChange={(e) => setFirstName(e.target.value)}
+                placeholder="Oleo"
+                className="w-full px-3 py-2 text-[#84849A] font-medium border-[#D6D8EE] border-[1px] border-solid rounded-full h-[56px] shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 text-sm pl-20"
+              />
+              <span className="absolute top-[-10px] font-medium bg-white px-2 left-4 text-[12px] text-[#84849A]">
+                First Name
+              </span>
+              <div className="absolute top-0 left-0 h-full flex items-center pl-[39px]">
+                <User />
+              </div>
+            </label>
+          </div>
+          <div>
+            <label className="relative flex items-center justify-center">
+              <input
+                type="text"
+                id="last-name"
+                name="last-name"
+                value={firstName}
+                onChange={(e) => setFirstName(e.target.value)}
+                placeholder="Bone"
+                className="w-full px-3 py-2 border-[#D6D8EE] font-medium border-[1px] border-solid rounded-full h-[56px] shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 text-sm pl-20"
+              />
+              <span className="absolute top-[-10px] font-medium bg-white px-2 left-4 text-[12px] text-[#84849A]">
+                Last Name
+              </span>
+              <div className="absolute top-0 left-0 h-full flex items-center pl-[39px]">
+                <User />
+              </div>
+            </label>
+          </div>
+        </div>
+        <div className="relative mb-4 mt-[29px]">
+          <input
+            id="address"
+            name="address"
+            value={address}
+            onChange={(e) => setAddress(e.target.value)}
+            rows={3}
+            placeholder="Address"
+            className="w-full px-3 py-2 border-[#D6D8EE] font-medium border-[1px] border-solid rounded-full h-[56px] shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 text-sm pl-20"
+          />
+          <div className="absolute top-0 left-0 h-full flex items-center pl-[39px]">
+            <HomeLocation />
+          </div>
+        </div>
+        <div className="grid grid-cols-2 gap-4 mb-4 mt-[29px]">
+          <div className="relative">
+            <input
+              type="text"
+              id="city"
+              name="city"
+              value={city}
+              onChange={(e) => setCity(e.target.value)}
+              placeholder="City"
+              className="w-full px-3 py-2 border-[#D6D8EE] font-medium border-[1px] border-solid rounded-full h-[56px] shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 text-sm pl-[30px]"
+            />
+            
+          </div>
+          <div className="relative">
+            <input
+              type="text"
+              id="postal-code"
+              name="postal-code"
+              value={postalCode}
+              onChange={(e) => setPostalCode(e.target.value)}
+              placeholder="Postal Code"
+              className="w-full px-3 py-2 border-[#D6D8EE] font-medium border-[1px] border-solid rounded-full h-[56px] focus:outline-none focus:ring-blue-500 focus:border-blue-500 text-sm pl-[30px]"
+            />
+            
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};

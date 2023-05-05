@@ -1,6 +1,7 @@
 import React from "react";
 import { ContactInformationCard } from "./ContactInformationCard";
 import { ExpressCheckoutCard } from "./ExpressCheckoutCard";
+import { ShippingAddressForm } from "./ShippingAddressForm";
 import { TimerCard } from "./TimerCard";
 
 export const Checkout = () => {
@@ -23,6 +24,7 @@ export const Checkout = () => {
               <TimerCard />
               <ExpressCheckoutCard />
               <ContactInformationCard />
+              <ShippingAddressForm />
             </div>
           </div>
 
