@@ -4,7 +4,7 @@ export const ShippingMethodCard = () => {
   return (
     <div className="mt-[50px]">
       <div>
-        <h2 className="text-[#000034] text-[22px]">Shipping method</h2>
+        <h2 className="text-[#000034] text-[22px] font-medium">Shipping method</h2>
         <div className="flex items-center justify-between my-[20px]">
           <div className="flex items-center justify-center">
             <input

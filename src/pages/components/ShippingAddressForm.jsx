@@ -15,7 +15,7 @@ export const ShippingAddressForm = () => {
   return (
     <div>
       <div className="mt-[50px] text-[24px] ">
-        <h2 className="mb-[20px]">Shipping Address</h2>
+        <h2 className="mb-[20px] font-medium">Shipping Address</h2>
         <div className="relative mb-4">
           <select
             id="country"
