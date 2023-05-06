@@ -2,6 +2,7 @@ import React from "react";
 import { ContactInformationCard } from "./ContactInformationCard";
 import { ExpressCheckoutCard } from "./ExpressCheckoutCard";
 import { ShippingAddressForm } from "./ShippingAddressForm";
+import { ShippingMethodCard } from "./ShippingMethodCard";
 import { TimerCard } from "./TimerCard";
 
 export const Checkout = () => {
@@ -25,6 +26,7 @@ export const Checkout = () => {
               <ExpressCheckoutCard />
               <ContactInformationCard />
               <ShippingAddressForm />
+              <ShippingMethodCard />
             </div>
           </div>
 

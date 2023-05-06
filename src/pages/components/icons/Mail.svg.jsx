@@ -4,7 +4,7 @@ export const Mail = () => {
   return (
     <div>
       <svg
-        width="20"
+        width="18"
         height="18"
         viewBox="0 0 20 20"
         fill="none"

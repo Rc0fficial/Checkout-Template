@@ -2,4 +2,26 @@
 @tailwind components;
 @tailwind utilities;
 
-
+input[type="radio"] {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    width: 24px;
+    height: 24px;
+    border: 1px solid #4b4e68;
+    border-radius: 50%;
+    outline: none;
+    transition: all 0.2s ease-in-out;
+    margin-right: 10px;
+  }
+  
+  input[type="radio"]:checked::before {
+    content: "";
+    display: block;
+    width: 12px;
+    height: 12px;
+    margin: 5px;
+    border-radius: 50%;
+    background-color: #4b4e68;
+  }
+  
