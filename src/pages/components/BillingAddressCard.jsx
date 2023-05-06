@@ -58,11 +58,13 @@ export const BillingAddressCard = () => {
           </div>
         </div>
         {useDifferentBilling && <ShippingAddressForm />}
-        <div className="bg-[#050824] max-w-[240px] h-[50px] flex items-center justify-center gap-[6px] rounded-full mt-[50px]">
+        <div  className="bg-[#050824] max-w-[240px] h-[50px] flex items-center justify-center gap-[6px] rounded-full mt-[50px] cursor-pointer hover:opacity-90">
+            <link rel="stylesheet" href="" />
           <div className="text-[#FFFFFF] font-semibold">Complete Order</div>
           <div>
             <ArrowRight />
           </div>
+          
         </div>
       </div>
     </div>
