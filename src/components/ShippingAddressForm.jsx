@@ -64,8 +64,8 @@ export const ShippingAddressForm = () => {
                 type="text"
                 id="last-name"
                 name="last-name"
-                value={firstName}
-                onChange={(e) => setFirstName(e.target.value)}
+                value={lastName}
+                onChange={(e) => setLastName(e.target.value)}
                 placeholder="Bone"
                 className="w-full px-3 py-2 border-[#D6D8EE] font-medium border-[1px] border-solid rounded-full h-[56px] shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 text-sm pl-20"
               />

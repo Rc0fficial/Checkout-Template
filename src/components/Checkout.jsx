@@ -2,12 +2,19 @@ import React from "react";
 import { BillingAddressCard } from "./BillingAddressCard";
 import { ContactInformationCard } from "./ContactInformationCard";
 import { ExpressCheckoutCard } from "./ExpressCheckoutCard";
+import { ArrowRight } from "./icons/ArrowRight.svg";
 import { PaymentMethodCard } from "./PaymentMethodCard";
 import { ShippingAddressForm } from "./ShippingAddressForm";
 import { ShippingMethodCard } from "./ShippingMethodCard";
 import { TimerCard } from "./TimerCard";
+import { useRouter } from "next/router";
 
 export const Checkout = () => {
+  const router = useRouter();
+
+  const handleClick = () => {
+    router.push("/thankyou"); 
+  };
   return (
     <div className="container mx-auto">
       <div className="flex flex-col items-center justify-start min-h-screen">
@@ -31,6 +38,16 @@ export const Checkout = () => {
               <ShippingMethodCard />
               <PaymentMethodCard />
               <BillingAddressCard />
+            </div>
+            <div
+              className="bg-[#050824] max-w-[240px] h-[50px] flex items-center justify-center gap-[6px] rounded-full mt-[50px] cursor-pointer hover:opacity-90"
+              onClick={handleClick}
+            >
+              <link rel="stylesheet" href="" />
+              <div className="text-[#FFFFFF] font-semibold">Complete Order</div>
+              <div>
+                <ArrowRight />
+              </div>
             </div>
           </div>
 
