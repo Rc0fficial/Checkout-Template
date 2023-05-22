@@ -1,4 +1,4 @@
-import React from "react";
+import { useState } from "react";
 import { BillingAddressCard } from "./BillingAddressCard";
 import { ContactInformationCard } from "./ContactInformationCard";
 import { ExpressCheckoutCard } from "./ExpressCheckoutCard";
@@ -10,11 +10,41 @@ import { TimerCard } from "./TimerCard";
 import { useRouter } from "next/router";
 
 export const Checkout = () => {
-  const router = useRouter();
+  const [cardNumber, setCardNumber] = useState("");
+  const [cardNumberError, setCardNumberError] = useState(null);
 
+  function handleSubmit(event) {
+    event.preventDefault();
+    if (!cardNumberError && !emailError) {
+      console.log("Form submitted");
+      // Add your code to submit the form here
+    } else {
+      console.log("Form not submitted due to errors");
+    }
+  }
+
+  function validateCardNumber(cardNumber) {
+    const regex = /^[0-9]{16}$/;
+    return cardNumber.trim().length > 0 && regex.test(cardNumber);
+  }
+
+  function handleCardNumberValidation(event) {
+    const cardNumber = event.target.value.replace(/\s/g, "");
+    setCardNumber(cardNumber);
+    if (!validateCardNumber(cardNumber)) {
+      setCardNumberError("Invalid card number");
+    } else {
+      setCardNumberError(null);
+    }
+  }
+
+  const router = useRouter();
   const handleClick = () => {
-    router.push("/thankyou"); 
+    if (!cardNumberError && cardNumber.trim().length > 0) {
+      router.push("/thankyou");
+    }
   };
+
   return (
     <div className="container mx-auto">
       <div className="flex flex-col items-center justify-start min-h-screen">
@@ -36,7 +66,12 @@ export const Checkout = () => {
               <ContactInformationCard />
               <ShippingAddressForm />
               <ShippingMethodCard />
-              <PaymentMethodCard />
+              <PaymentMethodCard
+                value={cardNumber}
+                error={cardNumberError}
+                onChange={handleCardNumberValidation}
+                onBlur={handleCardNumberValidation}
+              />
               <BillingAddressCard />
             </div>
             <div

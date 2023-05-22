@@ -3,28 +3,11 @@ import { CreditCard } from "./icons/CreditCard.svg";
 import { Mail } from "./icons/Mail.svg";
 import { User } from "./icons/User.svg";
 
-export const PaymentMethodCard = () => {
-  const [cardNumberError, setCardNumberError] = useState(null);
-
-  function validateCardNumber(cardNumber) {
-    // Add your validation logic here, for example:
-    // Check if cardNumber is not empty
-    // Check if cardNumber matches a valid credit card format (e.g. using regex)
-    return cardNumber.trim().length > 0;
-  }
-
-  function handleCardNumberValidation(event) {
-    const cardNumber = event.target.value;
-    if (!validateCardNumber(cardNumber)) {
-      setCardNumberError("Invalid credit card number");
-    } else {
-      setCardNumberError(null);
-    }
-  }
-
-  const inputClass = cardNumberError
-    ? "block w-full text-[14px] px-4 py-2 h-[58px] border-red-500 border-[1px] border-solid rounded-full focus:outline-none focus:border-blue-500 custom-border pl-20"
+export const PaymentMethodCard = ({ value, error, onChange, onBlur }) => {
+  const inputClass = error
+    ? "block w-full text-[14px] px-4 py-2 h-[58px] border-red-500 border-[1px] border-solid rounded-full focus:outline-none focus:border-red-500 custom-border pl-20"
     : "block w-full text-[14px] px-4 py-2 h-[58px] border-[#D6D8EE] border-[1px] border-solid rounded-full focus:outline-none focus:border-blue-500 custom-border pl-20";
+
   return (
     <div className="mt-[50px]">
       <div>
@@ -42,7 +25,9 @@ export const PaymentMethodCard = () => {
                 id="cardNumber"
                 placeholder="2587 9860 2354"
                 className={inputClass}
-                onBlur={handleCardNumberValidation}
+                value={value}
+                onChange={onChange}
+                onBlur={onBlur}
               />
               <span className="absolute top-[-10px] bg-white px-2 left-4 text-[12px] text-[#84849A]">
                 Card Number
@@ -52,9 +37,7 @@ export const PaymentMethodCard = () => {
                 <CreditCard />
               </div>
             </div>
-            {cardNumberError && (
-              <div className="text-red-500 text-sm">{cardNumberError}</div>
-            )}
+            {error && <div className="text-red-500 text-sm">{error}</div>}
           </label>
         </div>
         <div className="relative mb-4 mt-[29px]">
