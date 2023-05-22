@@ -12,8 +12,23 @@ import { useRouter } from "next/router";
 export const Checkout = () => {
   const [cardNumber, setCardNumber] = useState("");
   const [cardNumberError, setCardNumberError] = useState(null);
+  const [email, setEmail] = useState("");
+  const [emailError, setEmailError] = useState(null);
 
-  
+  function validateEmail(email) {
+    const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return regex.test(email);
+  }
+
+  function handleEmailValidation(event) {
+    const email = event.target.value;
+    setEmail(email);
+    if (!validateEmail(email)) {
+      setEmailError("Invalid email address");
+    } else {
+      setEmailError(null);
+    }
+  }
 
   function validateCardNumber(cardNumber) {
     const regex = /^[0-9]{16}$/;
@@ -32,7 +47,12 @@ export const Checkout = () => {
 
   const router = useRouter();
   const handleClick = () => {
-    if (!cardNumberError && cardNumber.trim().length > 0) {
+    if (
+      !cardNumberError &&
+      cardNumber.trim().length > 0 &&
+      !emailError &&
+      email.trim().length > 0
+    ) {
       router.push("/thankyou");
     }
   };
@@ -55,7 +75,11 @@ export const Checkout = () => {
             <div className="mt-[50px]">
               <TimerCard />
               <ExpressCheckoutCard />
-              <ContactInformationCard />
+              <ContactInformationCard
+                onBlur={handleEmailValidation}
+                error={emailError}
+                value={email}
+              />
               <ShippingAddressForm />
               <ShippingMethodCard />
               <PaymentMethodCard
