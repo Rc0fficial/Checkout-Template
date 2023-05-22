@@ -13,15 +13,7 @@ export const Checkout = () => {
   const [cardNumber, setCardNumber] = useState("");
   const [cardNumberError, setCardNumberError] = useState(null);
 
-  function handleSubmit(event) {
-    event.preventDefault();
-    if (!cardNumberError && !emailError) {
-      console.log("Form submitted");
-      // Add your code to submit the form here
-    } else {
-      console.log("Form not submitted due to errors");
-    }
-  }
+  
 
   function validateCardNumber(cardNumber) {
     const regex = /^[0-9]{16}$/;
