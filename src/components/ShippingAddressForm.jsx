@@ -43,23 +43,23 @@ export const ShippingAddressForm = ({ value, onChange, error }) => {
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-[20px] mb-4 mt-[29px]">
-          <div className="">
+          <div>
             <label className="relative">
-              <input
-                type="text"
-                id="first-name"
-                name="first-name"
-                value={value}
-                onChange={onChange}
-                placeholder="Oleo"
-                className={inputClass}
-              />
-
-              <span className="absolute top-[-10px] font-medium bg-white px-2 left-4 text-[12px] text-[#84849A]">
-                First Name
-              </span>
-              <div className="absolute top-0 left-0 h-full flex items-center pl-[39px]">
-                <User />
+              <div className="">
+                <input
+                  type="text"
+                  id="first-name"
+                  name="first-name"
+                  placeholder="first-name"
+                  className={inputClass}
+                  value={value}
+                />
+                <span className="absolute top-[-10px] font-medium bg-white px-2 left-4 text-[12px] text-[#84849A]">
+                  First Name
+                </span>
+                <div className="absolute top-[20px] left-[39px]">
+                  <Mail color={error ? "#EF4444" : "#D6D8EE"} />
+                </div>
               </div>
               {error && <div className="text-red-500 text-sm">{error}</div>}
             </label>
