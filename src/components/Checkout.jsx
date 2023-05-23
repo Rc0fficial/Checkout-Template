@@ -61,28 +61,23 @@ export const Checkout = () => {
       setFirstNameError("Empty Name");
       return false;
     }
-    // Add your additional validation checks here
-    // For example, you can check for a minimum length or specific characters
+
+    if (!validateEmail(email)) {
+      setEmailError("Invalid email address");
+      return false;
+    }
+    if (!validateCardNumber(cardNumber)) {
+      setCardNumberError("Invalid card number");
+      return false;
+    }
 
     return true;
   };
 
   const router = useRouter();
 
-  const handleSubmit = () => {
-    if (handleValidation()) {
-      // Perform any necessary actions before routing
-      router.push("/next-page");
-    }
-  };
-
   const handleClick = () => {
-    if (
-      !cardNumberError &&
-      cardNumber.trim().length > 0 &&
-      !emailError &&
-      email.trim().length > 0
-    ) {
+    if (handleValidation()) {
       router.push("/thankyou");
     }
   };
@@ -126,7 +121,7 @@ export const Checkout = () => {
             </div>
             <div
               className="bg-[#050824] max-w-[240px] h-[50px] flex items-center justify-center gap-[6px] rounded-full mt-[50px] cursor-pointer hover:opacity-90"
-              onClick={handleSubmit}
+              onClick={handleClick}
             >
               <link rel="stylesheet" href="" />
               <div className="text-[#FFFFFF] font-semibold">Complete Order</div>

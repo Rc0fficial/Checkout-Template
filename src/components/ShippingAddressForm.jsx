@@ -53,6 +53,7 @@ export const ShippingAddressForm = ({ value, onChange, error }) => {
                   placeholder="first-name"
                   className={inputClass}
                   value={value}
+                  onChange={onChange}
                 />
                 <span className="absolute top-[-10px] font-medium bg-white px-2 left-4 text-[12px] text-[#84849A]">
                   First Name
