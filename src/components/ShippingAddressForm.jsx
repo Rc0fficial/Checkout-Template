@@ -4,14 +4,18 @@ import { User } from "./icons/User.svg";
 import { Location } from "./icons/Location.svg";
 import { HomeLocation } from "./icons/HomeLocation.svg";
 
-export const ShippingAddressForm = () => {
+export const ShippingAddressForm = ({ value, onChange, error }) => {
   const countries = ["USA", "Canada", "Mexico", "Brazil"];
   const [country, setCountry] = useState("");
-  const [firstName, setFirstName] = useState("");
+
   const [lastName, setLastName] = useState("");
   const [address, setAddress] = useState("");
   const [city, setCity] = useState("");
   const [postalCode, setPostalCode] = useState("");
+
+  const inputClass = error
+    ? "block w-full text-[14px] px-4 py-2 h-[58px] border-red-500 border-[1px] border-solid rounded-full focus:outline-none focus:border-red-500 custom-border pl-20"
+    : "block w-full text-[14px] px-4 py-2 h-[58px] border-[#D6D8EE] border-[1px] border-solid rounded-full focus:outline-none focus:border-blue-500 custom-border pl-20";
   return (
     <div>
       <div className="mt-[50px] text-[24px] ">
@@ -38,24 +42,26 @@ export const ShippingAddressForm = () => {
           </div>
         </div>
 
-        <div className="grid grid-cols-2 gap-4 mb-4 mt-[29px]">
-          <div>
-            <label className="relative flex items-center justify-center">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-[20px] mb-4 mt-[29px]">
+          <div className="">
+            <label className="relative">
               <input
                 type="text"
                 id="first-name"
                 name="first-name"
-                value={firstName}
-                onChange={(e) => setFirstName(e.target.value)}
+                value={value}
+                onChange={onChange}
                 placeholder="Oleo"
-                className="w-full px-3 py-2 text-[#84849A] font-medium border-[#D6D8EE] border-[1px] border-solid rounded-full h-[56px] shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 text-sm pl-20"
+                className={inputClass}
               />
+
               <span className="absolute top-[-10px] font-medium bg-white px-2 left-4 text-[12px] text-[#84849A]">
                 First Name
               </span>
               <div className="absolute top-0 left-0 h-full flex items-center pl-[39px]">
                 <User />
               </div>
+              {error && <div className="text-red-500 text-sm">{error}</div>}
             </label>
           </div>
           <div>

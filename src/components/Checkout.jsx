@@ -14,6 +14,17 @@ export const Checkout = () => {
   const [cardNumberError, setCardNumberError] = useState(null);
   const [email, setEmail] = useState("");
   const [emailError, setEmailError] = useState(null);
+  const [firstName, setFirstName] = useState("");
+  const [firstNameError, setFirstNameError] = useState(null);
+
+  function validateFirstName(firstName) {
+    return firstName.trim() === "";
+  }
+
+  const handleInputChange = (event) => {
+    setFirstName(event.target.value);
+    setFirstNameError("");
+  };
 
   function validateEmail(email) {
     const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -45,7 +56,26 @@ export const Checkout = () => {
     }
   }
 
+  const handleValidation = () => {
+    if (firstName.trim() === "") {
+      setFirstNameError("Empty Name");
+      return false;
+    }
+    // Add your additional validation checks here
+    // For example, you can check for a minimum length or specific characters
+
+    return true;
+  };
+
   const router = useRouter();
+
+  const handleSubmit = () => {
+    if (handleValidation()) {
+      // Perform any necessary actions before routing
+      router.push("/next-page");
+    }
+  };
+
   const handleClick = () => {
     if (
       !cardNumberError &&
@@ -80,7 +110,11 @@ export const Checkout = () => {
                 error={emailError}
                 value={email}
               />
-              <ShippingAddressForm />
+              <ShippingAddressForm
+                onChange={handleInputChange}
+                value={firstName}
+                error={firstNameError}
+              />
               <ShippingMethodCard />
               <PaymentMethodCard
                 value={cardNumber}
@@ -92,7 +126,7 @@ export const Checkout = () => {
             </div>
             <div
               className="bg-[#050824] max-w-[240px] h-[50px] flex items-center justify-center gap-[6px] rounded-full mt-[50px] cursor-pointer hover:opacity-90"
-              onClick={handleClick}
+              onClick={handleSubmit}
             >
               <link rel="stylesheet" href="" />
               <div className="text-[#FFFFFF] font-semibold">Complete Order</div>

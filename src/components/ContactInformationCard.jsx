@@ -2,22 +2,6 @@ import React, { useState } from "react";
 import { Mail } from "./icons/mail.svg";
 
 export const ContactInformationCard = ({ onBlur, error, email }) => {
-  // const [emailError, setEmailError] = useState(null);
-
-  // function validateEmail(email) {
-  //   const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-  //   return regex.test(email);
-  // }
-
-  // function handleEmailValidation(event) {
-  //   const email = event.target.value;
-  //   if (!validateEmail(email)) {
-  //     setEmailError("Invalid email address");
-  //   } else {
-  //     setEmailError(null);
-  //   }
-  // }
-
   const inputClass = error
     ? "block w-full text-[14px] px-4 py-2 h-[58px] border-red-500 border-[1px] border-solid rounded-full focus:outline-none focus:border-red-500 custom-border pl-20"
     : "block w-full text-[14px] px-4 py-2 h-[58px] border-[#D6D8EE] border-[1px] border-solid rounded-full focus:outline-none focus:border-blue-500 custom-border pl-20";
