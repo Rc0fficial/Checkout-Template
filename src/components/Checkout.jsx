@@ -16,6 +16,8 @@ export const Checkout = () => {
   const [emailError, setEmailError] = useState(null);
   const [firstName, setFirstName] = useState("");
   const [firstNameError, setFirstNameError] = useState(null);
+  const [lastName, setLastName] = useState("");
+  const [lastNameError, setLastNameError] = useState(null);
 
   function validateFirstName(firstName) {
     return firstName.trim() === "";
