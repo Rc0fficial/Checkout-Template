@@ -14,18 +14,18 @@ export const Checkout = () => {
   const [cardNumberError, setCardNumberError] = useState(null);
   const [email, setEmail] = useState("");
   const [emailError, setEmailError] = useState(null);
-  const [firstName, setFirstName] = useState("");
   const [firstNameError, setFirstNameError] = useState(null);
-  const [lastName, setLastName] = useState("");
   const [lastNameError, setLastNameError] = useState(null);
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
 
-  function validateFirstName(firstName) {
-    return firstName.trim() === "";
-  }
-
-  const handleInputChange = (event) => {
+  const handleFirstNameInput = (event) => {
     setFirstName(event.target.value);
     setFirstNameError("");
+  };
+  const handleLastNameInput = (event) => {
+    setLastName(event.target.value);
+    setLastNameError("");
   };
 
   function validateEmail(email) {
@@ -60,7 +60,11 @@ export const Checkout = () => {
 
   const handleValidation = () => {
     if (firstName.trim() === "") {
-      setFirstNameError("Empty Name");
+      setFirstNameError("Enter a first name");
+      return false;
+    }
+    if (lastName.trim() === "") {
+      setLastNameError("Enter a last name");
       return false;
     }
 
@@ -108,9 +112,12 @@ export const Checkout = () => {
                 value={email}
               />
               <ShippingAddressForm
-                onChange={handleInputChange}
-                value={firstName}
-                error={firstNameError}
+                firstNameOnChange={handleFirstNameInput}
+                firstName={firstName}
+                firstNameError={firstNameError}
+                lastNameOnChange={handleLastNameInput}
+                lastName={lastName}
+                lastNameError={lastNameError}
               />
               <ShippingMethodCard />
               <PaymentMethodCard

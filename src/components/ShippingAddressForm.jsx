@@ -4,16 +4,24 @@ import { User } from "./icons/User.svg";
 import { Location } from "./icons/Location.svg";
 import { HomeLocation } from "./icons/HomeLocation.svg";
 
-export const ShippingAddressForm = ({ value, onChange, error }) => {
+export const ShippingAddressForm = ({
+  firstNameError,
+  firstName,
+  firstNameOnChange,
+  lastNameOnChange,
+  lastName,
+  lastNameError,
+}) => {
   const countries = ["USA", "Canada", "Mexico", "Brazil"];
   const [country, setCountry] = useState("");
-
-  const [lastName, setLastName] = useState("");
   const [address, setAddress] = useState("");
   const [city, setCity] = useState("");
   const [postalCode, setPostalCode] = useState("");
 
-  const inputClass = error
+  const inputClass = firstNameError
+    ? "block w-full text-[14px] px-4 py-2 h-[58px] border-red-500 border-[1px] border-solid rounded-full focus:outline-none focus:border-red-500 custom-border pl-20"
+    : "block w-full text-[14px] px-4 py-2 h-[58px] border-[#D6D8EE] border-[1px] border-solid rounded-full focus:outline-none focus:border-blue-500 custom-border pl-20";
+  const inputClassLastName = lastNameError
     ? "block w-full text-[14px] px-4 py-2 h-[58px] border-red-500 border-[1px] border-solid rounded-full focus:outline-none focus:border-red-500 custom-border pl-20"
     : "block w-full text-[14px] px-4 py-2 h-[58px] border-[#D6D8EE] border-[1px] border-solid rounded-full focus:outline-none focus:border-blue-500 custom-border pl-20";
   return (
@@ -52,36 +60,43 @@ export const ShippingAddressForm = ({ value, onChange, error }) => {
                   name="first-name"
                   placeholder="first-name"
                   className={inputClass}
-                  value={value}
-                  onChange={onChange}
+                  value={firstName}
+                  onChange={firstNameOnChange}
                 />
                 <span className="absolute top-[-10px] font-medium bg-white px-2 left-4 text-[12px] text-[#84849A]">
                   First Name
                 </span>
                 <div className="absolute top-[20px] left-[39px]">
-                  <Mail color={error ? "#EF4444" : "#D6D8EE"} />
+                  <User />
                 </div>
               </div>
-              {error && <div className="text-red-500 text-sm">{error}</div>}
+              {firstNameError && (
+                <div className="text-red-500 text-sm">{firstNameError}</div>
+              )}
             </label>
           </div>
           <div>
-            <label className="relative flex items-center justify-center">
-              <input
-                type="text"
-                id="last-name"
-                name="last-name"
-                value={lastName}
-                onChange={(e) => setLastName(e.target.value)}
-                placeholder="Bone"
-                className="w-full px-3 py-2 border-[#D6D8EE] font-medium border-[1px] border-solid rounded-full h-[56px] shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 text-sm pl-20"
-              />
-              <span className="absolute top-[-10px] font-medium bg-white px-2 left-4 text-[12px] text-[#84849A]">
-                Last Name
-              </span>
-              <div className="absolute top-0 left-0 h-full flex items-center pl-[39px]">
-                <User />
+            <label className="relative ">
+              <div>
+                <input
+                  type="text"
+                  id="last-name"
+                  name="last-name"
+                  value={lastName}
+                  onChange={lastNameOnChange}
+                  placeholder="Bone"
+                  className={inputClassLastName}
+                />
+                <span className="absolute top-[-10px] font-medium bg-white px-2 left-4 text-[12px] text-[#84849A]">
+                  Last Name
+                </span>
+                <div className="absolute top-[20px] left-[39px]">
+                  <User />
+                </div>
               </div>
+              {lastNameError && (
+                <div className="text-red-500 text-sm">{lastNameError}</div>
+              )}
             </label>
           </div>
         </div>
