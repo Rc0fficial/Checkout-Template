@@ -18,14 +18,18 @@ export const Checkout = () => {
   const [lastNameError, setLastNameError] = useState(null);
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
+  const [errors, setErrors] = useState([]);
 
   const handleFirstNameInput = (event) => {
     setFirstName(event.target.value);
     setFirstNameError("");
+    setErrors([]);
   };
+
   const handleLastNameInput = (event) => {
     setLastName(event.target.value);
     setLastNameError("");
+    setErrors([]);
   };
 
   function validateEmail(email) {
@@ -36,10 +40,11 @@ export const Checkout = () => {
   function handleEmailValidation(event) {
     const email = event.target.value;
     setEmail(email);
+    setEmailError("");
+    setErrors([]);
     if (!validateEmail(email)) {
       setEmailError("Invalid email address");
-    } else {
-      setEmailError(null);
+      setErrors((prevErrors) => [...prevErrors, "Invalid email address"]);
     }
   }
 
@@ -51,33 +56,42 @@ export const Checkout = () => {
   function handleCardNumberValidation(event) {
     const cardNumber = event.target.value.replace(/\s/g, "");
     setCardNumber(cardNumber);
+    setCardNumberError("");
+    setErrors([]);
     if (!validateCardNumber(cardNumber)) {
       setCardNumberError("Invalid card number");
-    } else {
-      setCardNumberError(null);
+      setErrors((prevErrors) => [...prevErrors, "Invalid card number"]);
     }
   }
 
   const handleValidation = () => {
+    let isValid = true;
+
     if (firstName.trim() === "") {
       setFirstNameError("Enter a first name");
-      return false;
+      setErrors((prevErrors) => [...prevErrors, "Enter a first name"]);
+      isValid = false;
     }
+
     if (lastName.trim() === "") {
       setLastNameError("Enter a last name");
-      return false;
+      setErrors((prevErrors) => [...prevErrors, "Enter a last name"]);
+      isValid = false;
     }
 
     if (!validateEmail(email)) {
       setEmailError("Invalid email address");
-      return false;
-    }
-    if (!validateCardNumber(cardNumber)) {
-      setCardNumberError("Invalid card number");
-      return false;
+      setErrors((prevErrors) => [...prevErrors, "Invalid email address"]);
+      isValid = false;
     }
 
-    return true;
+    if (!validateCardNumber(cardNumber)) {
+      setCardNumberError("Invalid card number");
+      setErrors((prevErrors) => [...prevErrors, "Invalid card number"]);
+      isValid = false;
+    }
+
+    return isValid;
   };
 
   const router = useRouter();
