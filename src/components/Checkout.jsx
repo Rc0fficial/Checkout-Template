@@ -9,6 +9,7 @@ import { ShippingMethodCard } from "./ShippingMethodCard";
 import { TimerCard } from "./TimerCard";
 import { useRouter } from "next/router";
 import { ItemPricingCard } from "./Card-2/ItemPricingCard";
+import { SecureSSLCard } from "./Card-2/SecureSSLCard";
 
 export const Checkout = () => {
   const [cardNumber, setCardNumber] = useState("");
@@ -104,12 +105,12 @@ export const Checkout = () => {
   };
 
   return (
-    <div className="container mx-auto">
+    <div className=" mx-auto">
       <div className="flex flex-col items-center justify-start min-h-screen">
         <div className="grid grid-cols-1 md:grid-cols-2 ">
           {/* Card 1 */}
-          <div className="bg-white rounded-lg shadow-md p-6">
-            <div className="flex flex-col mt-[60px]">
+          <div className="px-[100px] pt-[60px]">
+            <div className="flex flex-col ">
               <h1 className="text-lg font-bold text-[36px] mb-4 text-[#000034]">
                 Checkout
               </h1>
@@ -156,8 +157,12 @@ export const Checkout = () => {
           </div>
 
           {/* Card 2 */}
-          <div className="bg-white rounded-lg shadow-md p-6">
-            <ItemPricingCard />
+
+          <div className="bg-[#EBECF3] rounded-lg shadow-md pt-[66px] px-[61px]">
+            <div className="">
+              <ItemPricingCard />
+              <SecureSSLCard />
+            </div>
           </div>
         </div>
       </div>
