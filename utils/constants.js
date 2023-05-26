@@ -8,13 +8,13 @@ export const cardsData = [
   {
     imageSrc: "/shoe-2.png",
     altText: "shoe",
-    title: "Adidas running shoes",
-    price: "$99.99",
+    title: "Nike sneakers",
+    price: "$120.99",
   },
   {
     imageSrc: "/shoe-3.png",
     altText: "shoe",
-    title: "Adidas running shoes",
+    title: "Nike sneakers",
     price: "$99.99",
   },
 ];
