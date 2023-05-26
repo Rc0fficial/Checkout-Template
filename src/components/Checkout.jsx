@@ -10,6 +10,7 @@ import { TimerCard } from "./TimerCard";
 import { useRouter } from "next/router";
 import { ItemPricingCard } from "./Card-2/ItemPricingCard";
 import { SecureSSLCard } from "./Card-2/SecureSSLCard";
+import { UltimateJewellery } from "./Card-2/UltimateJewellery";
 
 export const Checkout = () => {
   const [cardNumber, setCardNumber] = useState("");
@@ -162,6 +163,7 @@ export const Checkout = () => {
             <div className="">
               <ItemPricingCard />
               <SecureSSLCard />
+              <UltimateJewellery />
             </div>
           </div>
         </div>
