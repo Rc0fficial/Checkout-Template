@@ -8,6 +8,7 @@ import { ShippingAddressForm } from "./ShippingAddressForm";
 import { ShippingMethodCard } from "./ShippingMethodCard";
 import { TimerCard } from "./TimerCard";
 import { useRouter } from "next/router";
+import { ItemPricingCard } from "./Card-2/ItemPricingCard";
 
 export const Checkout = () => {
   const [cardNumber, setCardNumber] = useState("");
@@ -108,7 +109,7 @@ export const Checkout = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 ">
           {/* Card 1 */}
           <div className="bg-white rounded-lg shadow-md p-6">
-            <div className="flex flex-col">
+            <div className="flex flex-col mt-[60px]">
               <h1 className="text-lg font-bold text-[36px] mb-4 text-[#000034]">
                 Checkout
               </h1>
@@ -156,12 +157,7 @@ export const Checkout = () => {
 
           {/* Card 2 */}
           <div className="bg-white rounded-lg shadow-md p-6">
-            <h2 className="text-lg font-medium mb-4">Card 2 Title</h2>
-            <p className="text-gray-600">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla
-              molestie malesuada dolor, in cursus odio vulputate nec. Duis sed
-              ipsum id nunc maximus efficitur.
-            </p>
+            <ItemPricingCard />
           </div>
         </div>
       </div>
