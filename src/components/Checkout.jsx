@@ -106,7 +106,7 @@ export const Checkout = () => {
   };
 
   return (
-    <div className=" mx-auto">
+    <div className=" mx-auto mb-6">
       <div className="flex flex-col items-center justify-start min-h-screen">
         <div className="grid grid-cols-1 md:grid-cols-2 ">
           {/* Card 1 */}
@@ -159,7 +159,7 @@ export const Checkout = () => {
 
           {/* Card 2 */}
 
-          <div className="bg-[#EBECF3] rounded-lg shadow-md pt-[66px] px-[61px]">
+          <div className="bg-[#EBECF3]  pt-[66px] px-[61px]">
             <div className="">
               <ItemPricingCard />
               <SecureSSLCard />
