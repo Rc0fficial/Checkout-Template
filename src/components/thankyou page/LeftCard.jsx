@@ -2,6 +2,7 @@ import React from "react";
 import { Button } from "../common/Button";
 import { ArrowLeft } from "../icons/ArrowLeft.svg";
 import { useRouter } from "next/router";
+import { OutputCard } from "./OutputCard";
 
 export const LeftCard = () => {
   const router = useRouter();
@@ -25,8 +26,9 @@ export const LeftCard = () => {
         <div className="mt-[30px] text-[#7782F1] text-[14px] font-medium bg-[#E4E4FF] py-[6px] px-[15px] rounded-xl border-[#7782F1] border-solid border-[1px]">
           Order ID: #10040
         </div>
-      </div>
       <Button title="Back to Shop" leftSvg={<ArrowLeft />} onClick={handleClick} />
+      <OutputCard/>
+      </div>
     </div>
   );
 };
