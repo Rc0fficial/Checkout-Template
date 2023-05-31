@@ -1,8 +1,7 @@
 import React from "react";
 import { ItemPricingCard } from "../Card-2/ItemPricingCard";
 import { SecureSSLCard } from "../Card-2/SecureSSLCard";
-import { Button } from "../common/Button";
-import { ArrowLeft } from "../icons/ArrowLeft.svg";
+import { LeftCard } from "./LeftCard";
 
 export const MainThankyou = () => {
   return (
@@ -10,8 +9,8 @@ export const MainThankyou = () => {
       <div className="mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-2">
           {/* Left Card */}
-          <div>
-            <Button title="Hello" rightSvg={<ArrowLeft />} />
+          <div className="flex justify-center mt-[60px]">
+            <LeftCard />
           </div>
           {/* Right Card */}
           <div className="h-screen pt-[66px] px-[61px] bg-[#EBECF3]">

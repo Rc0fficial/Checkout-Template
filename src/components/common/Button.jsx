@@ -7,9 +7,9 @@ export const Button = ({ title, leftSvg, rightSvg, onClick }) => {
       onClick={onClick}
     >
       <link rel="stylesheet" href="" />
-      <div>{rightSvg}</div>
-      <div className="text-[#FFFFFF] font-semibold">{title}</div>
       <div>{leftSvg}</div>
+      <div className="text-[#FFFFFF] font-semibold">{title}</div>
+      <div>{rightSvg}</div>
     </div>
   );
 };
