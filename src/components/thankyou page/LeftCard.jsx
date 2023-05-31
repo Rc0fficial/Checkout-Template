@@ -12,7 +12,7 @@ export const LeftCard = () => {
     router.push("/");
   };
   return (
-    <div className="mx-auto">
+    <div className="mx-auto mb-6">
       <div className="flex flex-col items-center ">
         <img src="/Like.png" alt="Thumb Like" />
         <div className="mt-[20px] flex items-center flex-col gap-[5px]">
