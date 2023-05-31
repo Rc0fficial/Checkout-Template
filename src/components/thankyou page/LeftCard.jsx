@@ -27,7 +27,7 @@ export const LeftCard = () => {
           Order ID: #10040
         </div>
       <Button title="Back to Shop" leftSvg={<ArrowLeft />} onClick={handleClick} />
-      <OutputCard/>
+      <OutputCard />
       </div>
     </div>
   );

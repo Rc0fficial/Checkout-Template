@@ -13,7 +13,7 @@ export const MainThankyou = () => {
             <LeftCard />
           </div>
           {/* Right Card */}
-          <div className="h-screen pt-[66px] px-[61px] bg-[#EBECF3]">
+          <div className="pt-[66px] px-[61px] bg-[#EBECF3]">
             <ItemPricingCard />
             <SecureSSLCard />
           </div>
