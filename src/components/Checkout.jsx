@@ -23,7 +23,7 @@ export const Checkout = () => {
   const [lastNameError, setLastNameError] = useState(null);
   // const [firstName, setFirstName] = useState("");
   const { firstName, setFirstName } = useContext(AppContext);
-  const [lastName, setLastName] = useState("");
+  const { lastName, setLastName } = useContext(AppContext);
   const [errors, setErrors] = useState([]);
   // const { setFirstName } = useContext(AppContext);
 
@@ -35,12 +35,19 @@ export const Checkout = () => {
   const handleFirstNameInput = (event) => {
     const value = event.target.value;
     setFirstName(value);
+    setFirstNameError("");
+    setErrors([]);
   };
 
+  // const handleLastNameInput = (event) => {
+  //   setLastName(event.target.value);
+  //   setLastNameError("");
+  //   setErrors([]);
+  // };
+
   const handleLastNameInput = (event) => {
-    setLastName(event.target.value);
-    setLastNameError("");
-    setErrors([]);
+    const value = event.target.value;
+    setLastName(value);
   };
 
   function validateEmail(email) {

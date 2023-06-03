@@ -4,6 +4,7 @@ import { AppContext } from "src/context/AppContext";
 
 export const OutputCard = () => {
   const { firstName } = useContext(AppContext);
+  const { lastName } = useContext(AppContext);
   return (
     <div className="mx-auto mt-[50px] border-solid border-[#D6D8EE] border-[1px] rounded-3xl py-[40px] px-[40px]">
       <div className="grid grid-cols-2 gap-[60px] ">
@@ -11,7 +12,7 @@ export const OutputCard = () => {
           <div>
             <p className="text-[#4B4E68] text-[14px] font-normal">Name:</p>
             <h3 className="text-[#000034] text-[14px] font-medium ">
-            {firstName}
+            {firstName}  {lastName}
             </h3>
           </div>
           <div className="max-w-[200px]">
