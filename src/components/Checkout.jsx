@@ -17,7 +17,7 @@ import { AppContext } from "src/context/AppContext";
 export const Checkout = () => {
   const [cardNumber, setCardNumber] = useState("");
   const [cardNumberError, setCardNumberError] = useState(null);
-  const [email, setEmail] = useState("");
+  const {email, setEmail} = useContext(AppContext);
   const [emailError, setEmailError] = useState(null);
   const [firstNameError, setFirstNameError] = useState(null);
   const [lastNameError, setLastNameError] = useState(null);

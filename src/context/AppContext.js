@@ -5,9 +5,10 @@ export const AppContext = createContext();
 export const AppProvider = ({ children }) => {
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
-  console.log(lastName)
+  const [email, setEmail] = useState("");
+  const [address, setAddress] = useState("");
   return (
-    <AppContext.Provider value={{ firstName, setFirstName, lastName, setLastName }}>
+    <AppContext.Provider value={{ firstName, setFirstName, lastName, setLastName, email, setEmail, address, setAddress }}>
       {children}
     </AppContext.Provider>
   );

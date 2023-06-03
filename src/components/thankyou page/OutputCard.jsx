@@ -5,6 +5,8 @@ import { AppContext } from "src/context/AppContext";
 export const OutputCard = () => {
   const { firstName } = useContext(AppContext);
   const { lastName } = useContext(AppContext);
+  const { email } = useContext(AppContext);
+  const { address } = useContext(AppContext);
   return (
     <div className="mx-auto mt-[50px] border-solid border-[#D6D8EE] border-[1px] rounded-3xl py-[40px] px-[40px]">
       <div className="grid grid-cols-2 gap-[60px] ">
@@ -12,7 +14,7 @@ export const OutputCard = () => {
           <div>
             <p className="text-[#4B4E68] text-[14px] font-normal">Name:</p>
             <h3 className="text-[#000034] text-[14px] font-medium ">
-            {firstName}  {lastName}
+              {firstName} {lastName}
             </h3>
           </div>
           <div className="max-w-[200px]">
@@ -20,7 +22,7 @@ export const OutputCard = () => {
               Shipping Address:
             </p>
             <h3 className="text-[#000034] text-[14px] font-medium ">
-              4140 Parker Rd. Allentown, New Mexico 31134
+              {address}
             </h3>
           </div>
           <div>
@@ -31,9 +33,7 @@ export const OutputCard = () => {
         <div className="flex flex-col gap-[16px] ">
           <div>
             <p className="text-[#4B4E68] text-[14px] font-normal">Email:</p>
-            <h3 className="text-[#000034] text-[14px] font-medium ">
-              oleo_bone@gmail.com
-            </h3>
+            <h3 className="text-[#000034] text-[14px] font-medium ">{email}</h3>
           </div>
           <div className="max-w-[200px]">
             <p className="text-[#4B4E68] text-[14px] font-normal">
