@@ -11,6 +11,8 @@ import { useRouter } from "next/router";
 import { ItemPricingCard } from "./Card-2/ItemPricingCard";
 import { SecureSSLCard } from "./Card-2/SecureSSLCard";
 import { UltimateJewellery } from "./Card-2/UltimateJewellery";
+import { useContext } from "react";
+import { AppContext } from "src/context/AppContext";
 
 export const Checkout = () => {
   const [cardNumber, setCardNumber] = useState("");
@@ -19,14 +21,20 @@ export const Checkout = () => {
   const [emailError, setEmailError] = useState(null);
   const [firstNameError, setFirstNameError] = useState(null);
   const [lastNameError, setLastNameError] = useState(null);
-  const [firstName, setFirstName] = useState("");
+  // const [firstName, setFirstName] = useState("");
+  const { firstName, setFirstName } = useContext(AppContext);
   const [lastName, setLastName] = useState("");
   const [errors, setErrors] = useState([]);
+  // const { setFirstName } = useContext(AppContext);
 
+  // const handleFirstNameInput = (event) => {
+  //   setFirstName(event.target.value);
+  //   setFirstNameError("");
+  //   setErrors([]);
+  // };
   const handleFirstNameInput = (event) => {
-    setFirstName(event.target.value);
-    setFirstNameError("");
-    setErrors([]);
+    const value = event.target.value;
+    setFirstName(value);
   };
 
   const handleLastNameInput = (event) => {
