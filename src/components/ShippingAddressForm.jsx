@@ -65,7 +65,7 @@ export const ShippingAddressForm = ({
                   value={firstName}
                   onChange={firstNameOnChange}
                 />
-                <span className="absolute top-[-10px] font-medium bg-white px-2 left-4 text-[12px] text-[#84849A]">
+                <span className="absolute top-[-10px] min-w-[70px] font-medium bg-white px-2 left-4 text-[12px] text-[#84849A]">
                   First Name
                 </span>
                 <div className="absolute top-[20px] left-[39px]">
