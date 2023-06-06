@@ -17,7 +17,7 @@ import { AppContext } from "src/context/AppContext";
 export const Checkout = () => {
   const [cardNumber, setCardNumber] = useState("");
   const [cardNumberError, setCardNumberError] = useState(null);
-  const {email, setEmail} = useContext(AppContext);
+  const { email, setEmail } = useContext(AppContext);
   const [emailError, setEmailError] = useState(null);
   const [firstNameError, setFirstNameError] = useState(null);
   const [lastNameError, setLastNameError] = useState(null);
@@ -125,7 +125,7 @@ export const Checkout = () => {
       <div className="flex flex-col items-center justify-start min-h-screen">
         <div className="grid grid-cols-1 md:grid-cols-2 ">
           {/* Card 1 */}
-          <div className="px-[100px] pt-[60px]">
+          <div className="px-[10px] md:px-[100px] pt-[60px]">
             <div className="flex flex-col ">
               <h1 className="text-lg font-bold text-[36px] mb-4 text-[#000034]">
                 Checkout
