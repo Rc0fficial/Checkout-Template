@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import { Mail } from "./icons/mail.svg";
+import React from "react";
+import { Mail } from "./icons/Mail.svg";
 
 export const ContactInformationCard = ({ onBlur, error, email }) => {
   const inputClass = error
