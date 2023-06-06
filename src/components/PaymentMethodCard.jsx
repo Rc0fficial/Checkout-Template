@@ -45,7 +45,7 @@ export const PaymentMethodCard = ({ value, error, onChange, onBlur }) => {
             id="address"
             name="address"
             placeholder="Name on Card"
-            className="w-full px-3 py-2 border-[#D6D8EE] font-medium border-[1px] border-solid rounded-full h-[56px] shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 text-sm pl-20"
+            className="w-full px-3 py-2 border-[#D6D8EE]  border-[1px] border-solid rounded-full h-[56px] shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 text-sm pl-20"
           />
           <div className="absolute top-0 left-0 h-full flex items-center pl-[39px]">
             <User />
@@ -58,7 +58,7 @@ export const PaymentMethodCard = ({ value, error, onChange, onBlur }) => {
               id="city"
               name="city"
               placeholder="MM/YY"
-              className="w-full px-3 py-2 border-[#D6D8EE] font-medium border-[1px] border-solid rounded-full h-[56px] shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 text-sm pl-[30px]"
+              className="w-full px-3 py-2 border-[#D6D8EE]  border-[1px] border-solid rounded-full h-[56px] shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 text-sm pl-[30px]"
             />
           </div>
           <div className="relative">
@@ -67,7 +67,7 @@ export const PaymentMethodCard = ({ value, error, onChange, onBlur }) => {
               id="postal-code"
               name="postal-code"
               placeholder="CVV"
-              className="w-full px-3 py-2 border-[#D6D8EE] font-medium border-[1px] border-solid rounded-full h-[56px] focus:outline-none focus:ring-blue-500 focus:border-blue-500 text-sm pl-[30px]"
+              className="w-full px-3 py-2 border-[#D6D8EE]  border-[1px] border-solid rounded-full h-[56px] focus:outline-none focus:ring-blue-500 focus:border-blue-500 text-sm pl-[30px]"
             />
           </div>
         </div>
