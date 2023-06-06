@@ -1,5 +1,4 @@
 import { useState } from "react";
-// import { Mail } from "./icons/mail.svg";
 import { User } from "./icons/User.svg";
 import { Location } from "./icons/Location.svg";
 import { HomeLocation } from "./icons/HomeLocation.svg";
