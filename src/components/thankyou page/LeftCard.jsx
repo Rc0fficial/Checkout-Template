@@ -3,6 +3,7 @@ import { Button } from "../common/Button";
 import { ArrowLeft } from "../icons/ArrowLeft.svg";
 import { useRouter } from "next/router";
 import { OutputCard } from "./OutputCard";
+import Image from "next/image";
 
 export const LeftCard = () => {
   const router = useRouter();
@@ -14,7 +15,7 @@ export const LeftCard = () => {
   return (
     <div className="mx-auto mb-6">
       <div className="flex flex-col items-center ">
-        <img src="/Like.png" alt="Thumb Like" />
+        <Image width={100} height={100} src="/Like.png" alt="Thumb Like" />
         <div className="mt-[20px] flex items-center flex-col gap-[5px]">
           <h3 className="text-[#000034] text-[24px] font-semibold">
             Thank you for your order

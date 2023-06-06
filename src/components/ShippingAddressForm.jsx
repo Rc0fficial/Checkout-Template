@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Mail } from "./icons/mail.svg";
+// import { Mail } from "./icons/mail.svg";
 import { User } from "./icons/User.svg";
 import { Location } from "./icons/Location.svg";
 import { HomeLocation } from "./icons/HomeLocation.svg";
@@ -16,7 +16,7 @@ export const ShippingAddressForm = ({
 }) => {
   const countries = ["USA", "Canada", "Mexico", "Brazil"];
   const [country, setCountry] = useState("");
-  const {address, setAddress} = useContext(AppContext)
+  const { address, setAddress } = useContext(AppContext);
   const [city, setCity] = useState("");
   const [postalCode, setPostalCode] = useState("");
 
@@ -65,12 +65,12 @@ export const ShippingAddressForm = ({
                   value={firstName}
                   onChange={firstNameOnChange}
                 />
-                <span className="absolute top-[-10px] font-medium bg-white px-2 left-4 text-[12px] text-[#84849A]">
-                   First Name
+                <span className="absolute top-[-10px] min-w-[70px] font-medium bg-white px-2 left-4 text-[12px] text-[#84849A]">
+                  First Name
                 </span>
                 <div className="absolute top-[20px] left-[39px]">
                   <User />
-                   </div>
+                </div>
               </div>
               {firstNameError && (
                 <div className="text-red-500 text-sm">{firstNameError}</div>
@@ -110,7 +110,7 @@ export const ShippingAddressForm = ({
             onChange={(e) => setAddress(e.target.value)}
             rows={3}
             placeholder="Address"
-            className="w-full px-3 py-2 border-[#D6D8EE] font-medium border-[1px] border-solid rounded-full h-[56px] shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 text-sm pl-20"
+            className="w-full px-3 py-2 border-[#D6D8EE]  border-[1px] border-solid rounded-full h-[56px] shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 text-sm pl-20"
           />
           <div className="absolute top-0 left-0 h-full flex items-center pl-[39px]">
             <HomeLocation />
@@ -125,7 +125,7 @@ export const ShippingAddressForm = ({
               value={city}
               onChange={(e) => setCity(e.target.value)}
               placeholder="City"
-              className="w-full px-3 py-2 border-[#D6D8EE] font-medium border-[1px] border-solid rounded-full h-[56px] shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 text-sm pl-[30px]"
+              className="w-full px-3 py-2 border-[#D6D8EE]  border-[1px] border-solid rounded-full h-[56px] shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 text-sm pl-[30px]"
             />
           </div>
           <div className="relative">
@@ -136,7 +136,7 @@ export const ShippingAddressForm = ({
               value={postalCode}
               onChange={(e) => setPostalCode(e.target.value)}
               placeholder="Postal Code"
-              className="w-full px-3 py-2 border-[#D6D8EE] font-medium border-[1px] border-solid rounded-full h-[56px] focus:outline-none focus:ring-blue-500 focus:border-blue-500 text-sm pl-[30px]"
+              className="w-full px-3 py-2 border-[#D6D8EE]  border-[1px] border-solid rounded-full h-[56px] focus:outline-none focus:ring-blue-500 focus:border-blue-500 text-sm pl-[30px]"
             />
           </div>
         </div>
