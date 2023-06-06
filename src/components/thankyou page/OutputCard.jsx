@@ -7,6 +7,8 @@ export const OutputCard = () => {
   const { lastName } = useContext(AppContext);
   const { email } = useContext(AppContext);
   const { address } = useContext(AppContext);
+  const { shippingAddress, setShippingAddress } = useContext(AppContext);
+  const { billingAddress, setBillingAddress } = useContext(AppContext);
   return (
     <div className="mx-auto mt-[50px] border-solid border-[#D6D8EE] border-[1px] rounded-3xl py-[40px] px-[40px]">
       <div className="grid grid-cols-2 gap-[60px] ">
@@ -22,7 +24,7 @@ export const OutputCard = () => {
               Shipping Address:
             </p>
             <h3 className="text-[#000034] text-[14px] font-medium ">
-              {address}
+              {shippingAddress}
             </h3>
           </div>
           <div>
@@ -40,7 +42,7 @@ export const OutputCard = () => {
               Billing Address:
             </p>
             <h3 className="min-h-[48px] text-[#000034] text-[14px] font-medium">
-              Same as shipping
+              {billingAddress}
             </h3>
           </div>
           <div>

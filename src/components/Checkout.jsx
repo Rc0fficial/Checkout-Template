@@ -25,6 +25,14 @@ export const Checkout = () => {
   const { firstName, setFirstName } = useContext(AppContext);
   const { lastName, setLastName } = useContext(AppContext);
   const [errors, setErrors] = useState([]);
+  const { shippingAddress, setShippingAddress } = useContext(AppContext);
+
+  const handleShippingAddressChange = (event) => {
+    setShippingAddress(event.target.value);
+  };
+
+  
+
   // const { setFirstName } = useContext(AppContext);
 
   // const handleFirstNameInput = (event) => {
@@ -150,6 +158,8 @@ export const Checkout = () => {
                 lastNameOnChange={handleLastNameInput}
                 lastName={lastName}
                 lastNameError={lastNameError}
+                value={shippingAddress}
+                onChange={handleShippingAddressChange}
               />
               <ShippingMethodCard />
               <PaymentMethodCard
@@ -158,7 +168,9 @@ export const Checkout = () => {
                 onChange={handleCardNumberValidation}
                 onBlur={handleCardNumberValidation}
               />
-              <BillingAddressCard />
+              <BillingAddressCard
+                
+              />
             </div>
             <div
               className="bg-[#050824] max-w-[240px] h-[50px] flex items-center justify-center gap-[6px] rounded-full mt-[50px] cursor-pointer hover:opacity-90"
