@@ -70,7 +70,7 @@ export const ShippingAddressForm = ({
                 </span>
                 <div className="absolute top-[20px] left-[39px]">
                   <User />
-                </div>
+                   </div>
               </div>
               {firstNameError && (
                 <div className="text-red-500 text-sm">{firstNameError}</div>
