@@ -8,9 +8,8 @@ export const ItemPricingCard = () => {
     <div className="mx-auto">
       <div className="">
         {cardsData?.map((card, idx) => (
-          <div className="mb-[20px]">
+          <div key={idx} className="mb-[20px]">
             <ShoeCard
-              key={idx}
               imageSrc={card.imageSrc}
               altText={card.altText}
               title={card.title}
