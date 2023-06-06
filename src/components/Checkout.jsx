@@ -125,7 +125,7 @@ export const Checkout = () => {
       <div className="flex flex-col items-center justify-start min-h-screen">
         <div className="grid grid-cols-1 md:grid-cols-2 ">
           {/* Card 1 */}
-          <div className="px-[10px] sm:px-[50px] lg:px-[100px] pt-[60px]">
+          <div className="px-[10px] sm:px-[50px] lg:px-[100px] pt-[60px] mb-8">
             <div className="flex flex-col ">
               <h1 className="text-lg font-bold text-[36px] mb-4 text-[#000034]">
                 Checkout
@@ -174,7 +174,7 @@ export const Checkout = () => {
 
           {/* Card 2 */}
 
-          <div className="bg-[#EBECF3]  pt-[66px] px-[61px]">
+          <div className="bg-[#EBECF3] px-[10px] sm:px-[50px] lg:px-[100px] pt-[66px] h-full">
             <div className="">
               <ItemPricingCard />
               <SecureSSLCard />
