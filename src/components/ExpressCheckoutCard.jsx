@@ -1,4 +1,5 @@
 import React from "react";
+import Image from "next/image";
 
 export const ExpressCheckoutCard = () => {
   return (
@@ -10,14 +11,15 @@ export const ExpressCheckoutCard = () => {
           </p>
           <div className="flex mt-[30px] gap-[20px] items-center justify-start">
             <div className="bg-blue-600 bg-opacity-10 h-[40px] max-w-[150px] px-2 min-w-[60px] mx-auto justify-center  flex items-center rounded-[16px] border-[1px] border-solid  border-purple-600 border-opacity-60">
-              <img width={60} height={15} src="/shoppay.png" alt="shoppay" />
+              <Image width={60} height={15} src="/shoppay.png" alt="shoppay" />
             </div>
             <div className="bg-blue-600 bg-opacity-10 h-[40px] max-w-[150px] px-2 min-w-[60px] mx-auto justify-center  flex items-center rounded-[16px] border-[1px] border-solid  border-purple-600 border-opacity-60">
-              <img width={60} height={15} src="/paypal.png" alt="paypal" />
+              <Image width={60} height={15} src="/paypal.png" alt="paypal" />
             </div>
             <div className="bg-blue-600 bg-opacity-10 h-[40px] max-w-[150px] px-3 min-w-[60px] mx-auto justify-center  flex items-center rounded-[16px] border-[1px] border-solid  border-purple-600 border-opacity-60">
-              <img width={45} height={15} src="/gpay.png" alt="gpay" />
+              <Image width={45} height={15} src="/gpay.png" alt="gpay" />
             </div>
+            
           </div>
         </div>
       </div>
