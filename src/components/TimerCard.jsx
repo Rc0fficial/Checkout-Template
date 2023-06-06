@@ -21,7 +21,7 @@ export const TimerCard = () => {
   return (
     <div>
       <div className="bg-[#979AB8] rounded-[16px]">
-        <div className="py-[30px] px-[30px]">
+        <div className="py-[30px] px-[20px]">
           <div className="flex flex-col">
             <p className="text-[16px] text-[#000034]">
               🔥 Your cart is reserved for{" "}
