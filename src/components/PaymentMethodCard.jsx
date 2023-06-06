@@ -73,7 +73,7 @@ export const PaymentMethodCard = ({ value, error, onChange, onBlur }) => {
         </div>
         <div class="flex items-center just my-4">
           <label class="checkboxContainer">
-            <p className="text-[14px]">
+            <p className="text-[12px] md:text-[14px]">
               By checking this box, I acknowledge that I have read and agree to
               the <span className="font-semibold">Terms of Service</span>, and{" "}
               <span className="font-semibold">Monthly Billing Terms</span> of
