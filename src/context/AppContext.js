@@ -9,6 +9,7 @@ export const AppProvider = ({ children }) => {
   const [address, setAddress] = useState("");
   const [shippingAddress, setShippingAddress] = useState("");
   const [billingAddress, setBillingAddress] = useState("");
+  const [useDifferentBilling, setUseDifferentBilling] = useState(false);
   return (
     <AppContext.Provider
       value={{
@@ -24,6 +25,8 @@ export const AppProvider = ({ children }) => {
         setShippingAddress,
         billingAddress,
         setBillingAddress,
+        useDifferentBilling,
+        setUseDifferentBilling,
       }}
     >
       {children}

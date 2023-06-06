@@ -5,15 +5,28 @@ import { useContext } from "react";
 import { AppContext } from "src/context/AppContext";
 
 export const BillingAddressCard = () => {
-  const { billingAddress, setBillingAddress } = useContext(AppContext);
-  const [useDifferentBilling, setUseDifferentBilling] = useState(false);
+  const {
+    billingAddress,
+    setBillingAddress,
+    useDifferentBilling,
+    setUseDifferentBilling,
+  } = useContext(AppContext);
+  // const [useDifferentBilling, setUseDifferentBilling] = useState(false);
 
   const handleBillingAddressChange = (event) => {
     setBillingAddress(event.target.value);
   };
 
+  // const handleRadioChange = (event) => {
+  //   setUseDifferentBilling(event.target.value === "use-different-billing");
+  // };
+
   const handleRadioChange = (event) => {
-    setUseDifferentBilling(event.target.value === "use-different-billing");
+    const selectedOption = event.target.value === "use-different-billing";
+    setUseDifferentBilling(selectedOption);
+    if (selectedOption) {
+      setBillingAddress(""); // Reset billing address when "Use a different billing address" is selected
+    }
   };
   return (
     <div className="mt-[50px]">

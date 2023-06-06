@@ -3,12 +3,16 @@ import { useContext } from "react";
 import { AppContext } from "src/context/AppContext";
 
 export const OutputCard = () => {
-  const { firstName } = useContext(AppContext);
-  const { lastName } = useContext(AppContext);
-  const { email } = useContext(AppContext);
-  const { address } = useContext(AppContext);
-  const { shippingAddress, setShippingAddress } = useContext(AppContext);
-  const { billingAddress, setBillingAddress } = useContext(AppContext);
+  const {
+    firstName,
+    lastName,
+    email,
+    address,
+    shippingAddress,
+    billingAddress,
+    useDifferentBilling,
+  } = useContext(AppContext);
+
   return (
     <div className="mx-auto mt-[50px] border-solid border-[#D6D8EE] border-[1px] rounded-3xl py-[40px] px-[40px]">
       <div className="grid grid-cols-2 gap-[60px] ">
@@ -42,7 +46,7 @@ export const OutputCard = () => {
               Billing Address:
             </p>
             <h3 className="min-h-[48px] text-[#000034] text-[14px] font-medium">
-              {billingAddress}
+            {useDifferentBilling ? billingAddress : "Same as shipping address"}
             </h3>
           </div>
           <div>
