@@ -21,7 +21,6 @@ export const Checkout = () => {
   const [emailError, setEmailError] = useState(null);
   const [firstNameError, setFirstNameError] = useState(null);
   const [lastNameError, setLastNameError] = useState(null);
-  // const [firstName, setFirstName] = useState("");
   const { firstName, setFirstName } = useContext(AppContext);
   const { lastName, setLastName } = useContext(AppContext);
   const [errors, setErrors] = useState([]);
@@ -31,15 +30,7 @@ export const Checkout = () => {
     setShippingAddress(event.target.value);
   };
 
-  
 
-  // const { setFirstName } = useContext(AppContext);
-
-  // const handleFirstNameInput = (event) => {
-  //   setFirstName(event.target.value);
-  //   setFirstNameError("");
-  //   setErrors([]);
-  // };
   const handleFirstNameInput = (event) => {
     const value = event.target.value;
     setFirstName(value);
@@ -47,11 +38,7 @@ export const Checkout = () => {
     setErrors([]);
   };
 
-  // const handleLastNameInput = (event) => {
-  //   setLastName(event.target.value);
-  //   setLastNameError("");
-  //   setErrors([]);
-  // };
+
 
   const handleLastNameInput = (event) => {
     const value = event.target.value;
@@ -133,7 +120,7 @@ export const Checkout = () => {
       <div className="flex flex-col items-center justify-start min-h-screen">
         <div className="grid grid-cols-1 md:grid-cols-2 ">
           {/* Card 1 */}
-          <div className="px-[10px] sm:px-[50px] lg:px-[100px] pt-[60px] mb-8">
+          <div className="px-[10px] sm:px-[50px] lg:px-[100px] pt-[20px] md:pt-[60px] mb-8">
             <div className="flex flex-col ">
               <h1 className="text-lg font-bold text-[36px] mb-4 text-[#000034]">
                 Checkout
