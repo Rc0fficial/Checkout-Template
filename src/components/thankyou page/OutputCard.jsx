@@ -11,6 +11,7 @@ export const OutputCard = () => {
     shippingAddress,
     billingAddress,
     useDifferentBilling,
+    shippingMethod,
   } = useContext(AppContext);
 
   return (
@@ -33,7 +34,11 @@ export const OutputCard = () => {
           </div>
           <div>
             <p className="text-[#4B4E68] text-[14px] font-normal">Shipping:</p>
-            <h3 className="text-[#000034] text-[14px] font-medium ">Free</h3>
+            <h3 className="text-[#000034] text-[14px] font-medium ">
+              {shippingMethod === "free-shipping"
+                ? "Free shipping"
+                : "DHL with price"}
+            </h3>
           </div>
         </div>
         <div className="flex flex-col gap-[16px] ">
@@ -46,7 +51,9 @@ export const OutputCard = () => {
               Billing Address:
             </p>
             <h3 className="min-h-[48px] text-[#000034] text-[14px] font-medium">
-            {useDifferentBilling ? billingAddress : "Same as shipping address"}
+              {useDifferentBilling
+                ? billingAddress
+                : "Same as shipping address"}
             </h3>
           </div>
           <div>

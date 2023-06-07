@@ -11,21 +11,16 @@ export const BillingAddressCard = () => {
     useDifferentBilling,
     setUseDifferentBilling,
   } = useContext(AppContext);
-  // const [useDifferentBilling, setUseDifferentBilling] = useState(false);
 
   const handleBillingAddressChange = (event) => {
     setBillingAddress(event.target.value);
   };
 
-  // const handleRadioChange = (event) => {
-  //   setUseDifferentBilling(event.target.value === "use-different-billing");
-  // };
-
   const handleRadioChange = (event) => {
     const selectedOption = event.target.value === "use-different-billing";
     setUseDifferentBilling(selectedOption);
     if (selectedOption) {
-      setBillingAddress(""); // Reset billing address when "Use a different billing address" is selected
+      setBillingAddress("");
     }
   };
   return (

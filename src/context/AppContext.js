@@ -10,6 +10,7 @@ export const AppProvider = ({ children }) => {
   const [shippingAddress, setShippingAddress] = useState("");
   const [billingAddress, setBillingAddress] = useState("");
   const [useDifferentBilling, setUseDifferentBilling] = useState(false);
+  const [shippingMethod, setShippingMethod] = useState('free-shipping');
   return (
     <AppContext.Provider
       value={{
@@ -27,6 +28,8 @@ export const AppProvider = ({ children }) => {
         setBillingAddress,
         useDifferentBilling,
         setUseDifferentBilling,
+        shippingMethod,
+        setShippingMethod,
       }}
     >
       {children}
