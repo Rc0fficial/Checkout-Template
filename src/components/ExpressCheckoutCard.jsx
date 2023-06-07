@@ -5,7 +5,7 @@ export const ExpressCheckoutCard = () => {
   return (
     <div>
       <div className="bg-[#FFFFFF] rounded-[16px] border-[#D6D8EE] border-solid border-[1px] mt-[30px] py-[30px] px-[20px]">
-          <p className="text-[16px] sm:text-[18px] font-semibold mb-[20px] text-[#000034]">
+          <p className="text-[16px] sm:text-[18px] font-medium mb-[20px] text-[#000034]">
             Express Checkout
           </p>
         <div className="flex items-center justify-between space-x-[20px]">

@@ -17,7 +17,7 @@ export const LeftCard = () => {
       <div className="flex flex-col items-center ">
         <Image width={100} height={100} src="/Like.png" alt="Thumb Like" />
         <div className="mt-[20px] flex items-center flex-col gap-[5px]">
-          <h3 className="text-[#000034] text-[24px] font-semibold">
+          <h3 className="text-[#000034] text-[24px] font-medium">
             Thank you for your order
           </h3>
           <p className="text-[#4B4E68] text-[16px] font-medium">
