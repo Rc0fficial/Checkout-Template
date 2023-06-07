@@ -13,12 +13,15 @@ export const ShippingAddressForm = ({
   lastNameOnChange,
   lastName,
   lastNameError,
+  value,
+  onChange,
 }) => {
   const countries = ["USA", "Canada", "Mexico", "Brazil"];
   const [country, setCountry] = useState("");
   const { address, setAddress } = useContext(AppContext);
   const [city, setCity] = useState("");
   const [postalCode, setPostalCode] = useState("");
+  
 
   const inputClass = firstNameError
     ? "block w-full text-[14px] px-4 py-2 h-[58px] border-red-500 border-[1px] border-solid rounded-full focus:outline-none focus:border-red-500 custom-border pl-20"
@@ -106,8 +109,8 @@ export const ShippingAddressForm = ({
           <input
             id="address"
             name="address"
-            value={address}
-            onChange={(e) => setAddress(e.target.value)}
+            value={value}
+            onChange={onChange}
             rows={3}
             placeholder="Address"
             className="w-full px-3 py-2 border-[#D6D8EE]  border-[1px] border-solid rounded-full h-[56px] shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 text-sm pl-20"

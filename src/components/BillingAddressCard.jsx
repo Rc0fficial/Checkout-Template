@@ -1,12 +1,27 @@
 import { useState } from "react";
 import { ArrowRight } from "./icons/ArrowRight.svg";
 import { ShippingAddressForm } from "./ShippingAddressForm";
+import { useContext } from "react";
+import { AppContext } from "src/context/AppContext";
 
 export const BillingAddressCard = () => {
-  const [useDifferentBilling, setUseDifferentBilling] = useState(false);
+  const {
+    billingAddress,
+    setBillingAddress,
+    useDifferentBilling,
+    setUseDifferentBilling,
+  } = useContext(AppContext);
+
+  const handleBillingAddressChange = (event) => {
+    setBillingAddress(event.target.value);
+  };
 
   const handleRadioChange = (event) => {
-    setUseDifferentBilling(event.target.value === "use-different-billing");
+    const selectedOption = event.target.value === "use-different-billing";
+    setUseDifferentBilling(selectedOption);
+    if (selectedOption) {
+      setBillingAddress("");
+    }
   };
   return (
     <div className="mt-[50px]">
@@ -57,8 +72,12 @@ export const BillingAddressCard = () => {
             </label>
           </div>
         </div>
-        {useDifferentBilling && <ShippingAddressForm />}
-        
+        {useDifferentBilling && (
+          <ShippingAddressForm
+            value={billingAddress}
+            onChange={handleBillingAddressChange}
+          />
+        )}
       </div>
     </div>
   );
