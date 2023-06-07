@@ -11,10 +11,10 @@ export const PaymentMethodCard = ({ value, error, onChange, onBlur }) => {
   return (
     <div className="mt-[50px]">
       <div>
-        <h2 className="text-[#000034] font-semibold text-[22px]">
+        <h2 className="text-[#000034] font-semibold text-[20px] sm:text-[22px]">
           Payment Method
         </h2>
-        <p className="mt-[5px] text-[#84849A]">
+        <p className="mt-[5px] text-[14px] text-[#84849A]">
           All transaction are secured and encryted
         </p>
         <div className="relative mt-[29px]">

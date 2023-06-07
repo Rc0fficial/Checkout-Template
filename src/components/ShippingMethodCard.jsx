@@ -10,7 +10,7 @@ export const ShippingMethodCard = () => {
   return (
     <div className="mt-[50px]">
       <div>
-        <h2 className="text-[#000034] text-[22px] font-medium">
+        <h2 className="text-[#000034] text-[20px] sm:text-[22px] font-medium">
           Shipping method
         </h2>
         <div className="flex items-center justify-between my-[20px]">
