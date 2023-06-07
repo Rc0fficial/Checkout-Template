@@ -30,15 +30,12 @@ export const Checkout = () => {
     setShippingAddress(event.target.value);
   };
 
-
   const handleFirstNameInput = (event) => {
     const value = event.target.value;
     setFirstName(value);
     setFirstNameError("");
     setErrors([]);
   };
-
-
 
   const handleLastNameInput = (event) => {
     const value = event.target.value;
@@ -77,7 +74,7 @@ export const Checkout = () => {
     }
   }
 
-  const handleValidation = () => {
+   const  handleValidation = () => {
     let isValid = true;
 
     if (firstName.trim() === "") {
@@ -109,7 +106,8 @@ export const Checkout = () => {
 
   const router = useRouter();
 
-  const handleClick = () => {
+  const handleClick = (e) => {
+    e.preventDefault();
     if (handleValidation()) {
       router.push("/thankyou");
     }
@@ -155,9 +153,7 @@ export const Checkout = () => {
                 onChange={handleCardNumberValidation}
                 onBlur={handleCardNumberValidation}
               />
-              <BillingAddressCard
-                
-              />
+              <BillingAddressCard />
             </div>
             <div
               className="bg-[#050824] max-w-[240px] h-[50px] flex items-center justify-center gap-[6px] rounded-full mt-[50px] cursor-pointer hover:opacity-90"
