@@ -8,7 +8,7 @@ export const Button = ({ title, leftSvg, rightSvg, onClick }) => {
     >
       <link rel="stylesheet" href="" />
       <div>{leftSvg}</div>
-      <div className="text-[#FFFFFF] font-semibold">{title}</div>
+      <div className="text-[#FFFFFF] font-medium">{title}</div>
       <div>{rightSvg}</div>
     </div>
   );

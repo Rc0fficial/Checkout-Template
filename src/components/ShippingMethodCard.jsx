@@ -10,7 +10,7 @@ export const ShippingMethodCard = () => {
   return (
     <div className="mt-[50px]">
       <div>
-        <h2 className="text-[#000034] text-[22px] font-medium">
+        <h2 className="text-[#000034] text-[20px] sm:text-[22px] font-medium">
           Shipping method
         </h2>
         <div className="flex items-center justify-between my-[20px]">
@@ -32,7 +32,7 @@ export const ShippingMethodCard = () => {
               <span className="dot"></span>
             </label>
           </div>
-          <div className="text-[#000034] font-semibold">$10</div>
+          <div className="text-[#000034] font-medium">$10</div>
         </div>
         <div className="flex items-center justify-between mb-4">
           <div className="flex items-center justify-center">
@@ -53,7 +53,7 @@ export const ShippingMethodCard = () => {
               <div className="dot"></div>
             </label>
           </div>
-          <div className="text-[#000034] font-semibold">$20</div>
+          <div className="text-[#000034] font-medium">$20</div>
         </div>
       </div>
     </div>

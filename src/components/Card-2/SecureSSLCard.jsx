@@ -17,11 +17,11 @@ export const SecureSSLCard = () => {
         <div className="flex flex-col items-center justify-center gap-[12px]">
           <div className="flex items-center gap-[8.5px]">
             <Lock />
-            <p className="text-[#4B4E68] font-normal">
+            <p className="text-[#4B4E68] font-normal text-[12px] sm:text-[16px]">
               Secure SSL Encryption & Guaranteed Safe Checkout
             </p>
           </div>
-          <div className="flex gap-[7px]">
+          <div className="flex gap-[7px] items-center">
             {logo?.map((item, idx) => (
               <div key={idx}>
                 <Image width={40} height={24} src={item?.src} alt={item?.src} />

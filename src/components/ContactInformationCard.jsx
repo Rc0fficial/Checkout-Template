@@ -9,7 +9,7 @@ export const ContactInformationCard = ({ onBlur, error, email }) => {
   return (
     <div>
       <div className="relative mt-[29px]">
-        <h2 className="mb-[29px] text-[22px] font-semibold">
+        <h2 className="mb-[29px] text-[20px] sm:text-[22px] font-medium">
           Contact Information
         </h2>
         <label className="relative">

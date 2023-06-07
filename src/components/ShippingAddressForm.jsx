@@ -31,7 +31,7 @@ export const ShippingAddressForm = ({
     : "block w-full text-[14px] px-4 py-2 h-[58px] border-[#D6D8EE] border-[1px] border-solid rounded-full focus:outline-none focus:border-blue-500 custom-border pl-20";
   return (
     <div>
-      <div className="mt-[50px] text-[24px] ">
+      <div className="mt-[50px] text-[20px] sm:text-[22px] ">
         <h2 className="mb-[20px] font-medium">Shipping Address</h2>
         <div className="relative mb-4">
           <select

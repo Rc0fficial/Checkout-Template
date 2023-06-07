@@ -25,10 +25,10 @@ export const ItemPricingCard = () => {
             key={idx}
             className="flex items-center justify-between mb-[11px]"
           >
-            <p className="font-normal text-[16px] text-[#000034]">
+            <p className="font-normal text-[14px] sm:text-[16px] text-[#000034]">
               {item?.title}
             </p>
-            <p className="font-normal text-[16px] text-[#000034]">
+            <p className="font-normal text-[14px] sm:text-[16px] text-[#000034]">
               {item?.price}
             </p>
           </div>

@@ -26,7 +26,7 @@ export const BillingAddressCard = () => {
   return (
     <div className="mt-[50px]">
       <div>
-        <h2 className="text-[#000034] text-[22px] font-medium mb-[5px]">
+        <h2 className="text-[#000034] text-[20px] sm:text-[22px] font-medium mb-[5px]">
           Billing Address
         </h2>
         <p className="text-[#84849A] font-normal">
