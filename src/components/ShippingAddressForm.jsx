@@ -1,10 +1,7 @@
 import { useState } from "react";
-// import { Mail } from "./icons/mail.svg";
 import { User } from "./icons/User.svg";
 import { Location } from "./icons/Location.svg";
 import { HomeLocation } from "./icons/HomeLocation.svg";
-import { useContext } from "react";
-import { AppContext } from "src/context/AppContext";
 
 export const ShippingAddressForm = ({
   firstNameError,
@@ -18,10 +15,8 @@ export const ShippingAddressForm = ({
 }) => {
   const countries = ["USA", "Canada", "Mexico", "Brazil"];
   const [country, setCountry] = useState("");
-  const { address, setAddress } = useContext(AppContext);
   const [city, setCity] = useState("");
   const [postalCode, setPostalCode] = useState("");
-  
 
   const inputClass = firstNameError
     ? "block w-full text-[14px] px-4 py-2 h-[58px] border-red-500 border-[1px] border-solid rounded-full focus:outline-none focus:border-red-500 custom-border pl-20"
