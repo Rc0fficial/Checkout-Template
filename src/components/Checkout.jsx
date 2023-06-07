@@ -177,7 +177,7 @@ export const Checkout = () => {
               onClick={handleClick}
             >
               <link rel="stylesheet" href="" />
-              <div className="text-[#FFFFFF] font-medium">Complete Order</div>
+              <div className="text-[#FFFFFF] font-semibold">Complete Order</div>
               <div>
                 <ArrowRight />
               </div>

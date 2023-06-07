@@ -11,13 +11,13 @@ export const PaymentMethodCard = ({ value, error, onChange, onBlur }) => {
   return (
     <div className="mt-[50px]">
       <div>
-        <h2 className="text-[#000034] font-medium text-[20px] sm:text-[22px]">
+        <h2 className="text-[#000034] font-semibold text-[22px]">
           Payment Method
         </h2>
-        <p className="mt-[5px] text-[14px] text-[#84849A]">
+        <p className="mt-[5px] text-[#84849A]">
           All transaction are secured and encryted
         </p>
-        <div className="relative mt-[29px]">
+        <div className=" mt-[29px]">
           <label className="relative">
             <div className="">
               <input
@@ -33,7 +33,7 @@ export const PaymentMethodCard = ({ value, error, onChange, onBlur }) => {
                 Card Number
               </span>
 
-              <div className="absolute top-0 left-0 h-full flex items-center pl-[39px]">
+              <div className="absolute top-[20px] left-[39px]">
                 <CreditCard />
               </div>
             </div>
@@ -75,8 +75,8 @@ export const PaymentMethodCard = ({ value, error, onChange, onBlur }) => {
           <label class="checkboxContainer">
             <p className="text-[12px] md:text-[14px]">
               By checking this box, I acknowledge that I have read and agree to
-              the <span className="font-medium">Terms of Service</span>, and{" "}
-              <span className="font-medium">Monthly Billing Terms</span> of
+              the <span className="font-semibold">Terms of Service</span>, and{" "}
+              <span className="font-semibold">Monthly Billing Terms</span> of
               this website and want to opt-in for the monthly billed Dream
               Collection Club®
             </p>
