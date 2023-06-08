@@ -1,5 +1,3 @@
-import { useState } from "react";
-import { ArrowRight } from "./icons/ArrowRight.svg";
 import { ShippingAddressForm } from "./ShippingAddressForm";
 import { useContext } from "react";
 import { AppContext } from "src/context/AppContext";
