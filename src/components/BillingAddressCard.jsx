@@ -2,7 +2,7 @@ import { ShippingAddressForm } from "./ShippingAddressForm";
 import { useContext } from "react";
 import { AppContext } from "src/context/AppContext";
 
-export const BillingAddressCard = () => {
+export  const BillingAddressCard = () => {
   const {
     billingAddress,
     setBillingAddress,
