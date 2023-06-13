@@ -21,7 +21,6 @@ export const Checkout = () => {
   const [emailError, setEmailError] = useState(null);
   const [firstNameError, setFirstNameError] = useState(null);
   const [lastNameError, setLastNameError] = useState(null);
-  // const [firstName, setFirstName] = useState("");
   const { firstName, setFirstName } = useContext(AppContext);
   const { lastName, setLastName } = useContext(AppContext);
   const [errors, setErrors] = useState([]);
@@ -31,27 +30,12 @@ export const Checkout = () => {
     setShippingAddress(event.target.value);
   };
 
-  
-
-  // const { setFirstName } = useContext(AppContext);
-
-  // const handleFirstNameInput = (event) => {
-  //   setFirstName(event.target.value);
-  //   setFirstNameError("");
-  //   setErrors([]);
-  // };
   const handleFirstNameInput = (event) => {
     const value = event.target.value;
     setFirstName(value);
     setFirstNameError("");
     setErrors([]);
   };
-
-  // const handleLastNameInput = (event) => {
-  //   setLastName(event.target.value);
-  //   setLastNameError("");
-  //   setErrors([]);
-  // };
 
   const handleLastNameInput = (event) => {
     const value = event.target.value;
@@ -90,7 +74,7 @@ export const Checkout = () => {
     }
   }
 
-  const handleValidation = () => {
+   const  handleValidation = () => {
     let isValid = true;
 
     if (firstName.trim() === "") {
@@ -122,7 +106,8 @@ export const Checkout = () => {
 
   const router = useRouter();
 
-  const handleClick = () => {
+  const handleClick = (e) => {
+    e.preventDefault();
     if (handleValidation()) {
       router.push("/thankyou");
     }
@@ -133,7 +118,7 @@ export const Checkout = () => {
       <div className="flex flex-col items-center justify-start min-h-screen">
         <div className="grid grid-cols-1 md:grid-cols-2 ">
           {/* Card 1 */}
-          <div className="px-[10px] sm:px-[50px] lg:px-[100px] pt-[60px] mb-8">
+          <div className="px-[10px] sm:px-[50px] lg:px-[100px] pt-[20px] md:pt-[60px] mb-8">
             <div className="flex flex-col ">
               <h1 className="text-lg font-bold text-[36px] mb-4 text-[#000034]">
                 Checkout
@@ -168,16 +153,14 @@ export const Checkout = () => {
                 onChange={handleCardNumberValidation}
                 onBlur={handleCardNumberValidation}
               />
-              <BillingAddressCard
-                
-              />
+              <BillingAddressCard />
             </div>
             <div
               className="bg-[#050824] max-w-[240px] h-[50px] flex items-center justify-center gap-[6px] rounded-full mt-[50px] cursor-pointer hover:opacity-90"
               onClick={handleClick}
             >
               <link rel="stylesheet" href="" />
-              <div className="text-[#FFFFFF] font-medium">Complete Order</div>
+              <div className="text-[#FFFFFF] font-semibold">Complete Order</div>
               <div>
                 <ArrowRight />
               </div>

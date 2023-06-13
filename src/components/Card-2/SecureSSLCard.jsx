@@ -5,7 +5,7 @@ import Image from "next/image";
 export const SecureSSLCard = () => {
   const logo = [
     { src: "/masterCard.png", alt: "mastercard" },
-    { src: "/visaCard.png", alt: "visacard" },
+    { src: "/VisaCard.png", alt: "visacard" },
     { src: "/paypal.png", alt: "paypal" },
     { src: "/amex.png", alt: "amex" },
     { src: "/jcb.png", alt: "jcb" },
