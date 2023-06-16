@@ -65,7 +65,7 @@ export  const BillingAddressCard = () => {
               htmlFor="use-different-billing"
               className="mr-4 text-[#4B4E68] font-medium relative"
             >
-              Use a different billing address
+              Use a  different billing address
               <div className="dot"></div>
             </label>
           </div>
