@@ -2,7 +2,7 @@ import { ShippingAddressForm } from "./ShippingAddressForm";
 import { useContext } from "react";
 import { AppContext } from "src/context/AppContext";
 
-export  const BillingAddressCard = () => {
+export const BillingAddressCard = () => {
   const {
     billingAddress,
     setBillingAddress,
@@ -65,13 +65,16 @@ export  const BillingAddressCard = () => {
               htmlFor="use-different-billing"
               className="mr-4 text-[#4B4E68] font-medium relative"
             >
-              Use a  different billing address
+              Use a different billing address
               <div className="dot"></div>
             </label>
           </div>
         </div>
         {useDifferentBilling && (
           <ShippingAddressForm
+
+
+
             value={billingAddress}
             
             onChange={handleBillingAddressChange}
