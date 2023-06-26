@@ -72,7 +72,6 @@ export const BillingAddressCard = () => {
         </div>
         {useDifferentBilling && (
           <ShippingAddressForm
-          
             value={billingAddress}
             onChange={handleBillingAddressChange}
           />
