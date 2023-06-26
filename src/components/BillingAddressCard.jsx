@@ -74,6 +74,7 @@ export const BillingAddressCard = () => {
           <ShippingAddressForm
             value={billingAddress}
             onChange={handleBillingAddressChange}
+            
           />
         )}
       </div>
