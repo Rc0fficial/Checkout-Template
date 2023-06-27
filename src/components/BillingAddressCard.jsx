@@ -75,9 +75,7 @@ export const BillingAddressCard = () => {
 
           
           value={billingAddress}
-          
-          
-          onChange={handleBillingAddressChange}
+            onChange={handleBillingAddressChange}
           />
         )}
       </div>
