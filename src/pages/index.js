@@ -9,9 +9,7 @@ export default function Home() {
   return (
     <div>
       <Navbar />
-      
 
-      
       <Checkout />
     </div>
   );
