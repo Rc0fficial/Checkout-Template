@@ -11,8 +11,9 @@ export default function Home() {
       <Navbar />
       <Checkout />
       
-
       
+
+
     </div>
   );
 }
