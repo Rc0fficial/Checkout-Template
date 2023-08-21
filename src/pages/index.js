@@ -13,7 +13,6 @@ export default function Home() {
 
 
 
-
       <Checkout />
     </div>
 
@@ -23,6 +22,6 @@ export default function Home() {
 
 
 
-  
+
 
 }
